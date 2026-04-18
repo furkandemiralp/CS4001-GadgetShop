@@ -1,28 +1,36 @@
+// mobile class extends gadget
 public class Mobile extends Gadget
 {
+    // mobile credit
     private int credit;
-    
-    public Mobile(String model, double price, int weight,String size,int credit)
+
+    // constructor
+    public Mobile(String model, double price, int weight, String size, int credit)
     {
-        super(model, price, weight, size);
+        super(model, price, weight, size); // call parent
         this.credit = credit;
     }
+
     public int getCredit()
     {
         return credit;
     }
-    public void addCredit(int amount)
-    {
-        if(amount > 0)
-        {
-            credit = credit + amount;
-        }
-        else
-        {
-            System.out.println("Enter a positive credit amount.");
-        }
+
+    // add credit
+     public void addCredit(int amount)
+      {
+          if(amount > 0)
+       {
+           credit = credit + amount;
+       }
+       else
+       {
+          System.out.println("Enter a positive credit amount.");
+      }
     }
-    public void makeCall(String phoneNumber, int duration)
+
+    // make a call
+     public void makeCall(String phoneNumber, int duration)
     {
         if(credit >= duration)
         {
@@ -31,9 +39,11 @@ public class Mobile extends Gadget
         }
         else
         {
-            System.out.println("Insufficient credit to make the call.");
+            System.out.println("Not enough credit.");
         }
     }
+
+    // override display
     public void display()
     {
         super.display();
